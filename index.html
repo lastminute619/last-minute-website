@@ -1,45 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Last Minute Academic Services</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Last Minute</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+body { background:#0f172a; color:#e5e7eb; }
+header { display:flex; justify-content:space-between; align-items:center; padding:20px 60px; position:sticky; top:0; background:#0f172a; }
+nav a { margin:0 15px; color:#cbd5f5; text-decoration:none; }
+.btn { padding:10px 20px; border:1px solid #6366f1; border-radius:8px; }
+.hero { text-align:center; padding:100px 20px; }
+.badge { border:1px solid #6366f1; display:inline-block; padding:6px 14px; border-radius:20px; margin-bottom:20px; color:#a5b4fc; }
+.hero h1 { font-size:48px; margin-bottom:20px; }
+.hero span { color:#a5b4fc; }
+.hero p { color:#9ca3af; margin-bottom:30px; }
+.hero-buttons button { margin:10px; padding:12px 24px; border-radius:10px; border:none; cursor:pointer; }
+.primary { background:#6366f1; color:white; }
+.secondary { background:transparent; border:1px solid #6366f1; color:white; }
+.section { padding:80px 60px; }
+.section h2 { font-size:32px; margin-bottom:10px; }
+.section p { color:#9ca3af; margin-bottom:40px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.card { background:#111827; padding:25px; border-radius:12px; border:1px solid #1f2937; }
+.process { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:30px; }
+.step { background:#111827; padding:20px; border-radius:12px; }
+.pricing { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.price-card { background:#111827; padding:25px; border-radius:12px; border:1px solid #1f2937; }
+.price { font-size:28px; margin:10px 0; }
+.convert { font-size:14px; color:#9ca3af; }
+.testimonials { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.testimonial { background:#111827; padding:20px; border-radius:12px; }
+form input, form textarea, form select { width:100%; margin:10px 0; padding:12px; border-radius:8px; border:none; background:#1f2937; color:white; }
+footer { text-align:center; padding:20px; color:#6b7280; }
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to Last Minute Academic Services</h1>
-        <nav>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="services">
-            <h2>Our Services</h2>
-            <p>We provide a range of academic services to help you succeed:</p>
-            <ul>
-                <li>Essay Writing</li>
-                <li>Research Assistance</li>
-                <li>Editing & Proofreading</li>
-                <li>Tutoring</li>
-                <li>Exam Preparation</li>
-            </ul>
-        </section>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Last Minute Academic Services is dedicated to helping students achieve their academic goals through professional assistance and support.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or need further assistance, please reach out to us at <a href="mailto:info@lastminuteacademicservices.com">info@lastminuteacademicservices.com</a>.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Last Minute Academic Services. All Rights Reserved.</p>
-    </footer>
+
+<header>
+  <h2>LastMinute</h2>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="btn">Get started</div>
+</header>
+
+<section class="hero">
+  <div class="badge">ACADEMIC WRITING & RESEARCH SUPPORT</div>
+  <h1>Deadline <span>tonight?</span><br>We've got you covered.</h1>
+  <p>Professional thesis writing, research papers, dissertations, and data analysis.</p>
+  <div class="hero-buttons">
+    <button class="primary">Order now</button>
+    <button class="secondary">See pricing</button>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <h2>Services built for students</h2>
+  <p>From a single chapter to a full dissertation.</p>
+  <div class="grid">
+    <div class="card"><h3>Thesis writing</h3><p>Full or partial thesis support.</p></div>
+    <div class="card"><h3>Research papers</h3><p>Well-structured and properly cited work.</p></div>
+    <div class="card"><h3>Data analysis</h3><p>SPSS, Excel, regression & statistics.</p></div>
+    <div class="card"><h3>Editing</h3><p>Proofreading and polishing.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>How it works</h2>
+  <div class="process">
+    <div class="step"><h4>1. Share brief</h4><p>Tell us your requirements.</p></div>
+    <div class="step"><h4>2. Get quote</h4><p>Transparent pricing.</p></div>
+    <div class="step"><h4>3. We work</h4><p>Expert starts immediately.</p></div>
+    <div class="step"><h4>4. Delivery</h4><p>Before deadline.</p></div>
+  </div>
+</section>
+
+<section id="pricing" class="section">
+  <h2>Pricing</h2>
+  <p style="color:#9ca3af">All prices in euros (€)</p>
+  <div class="pricing">
+    <div class="price-card">
+      <h3>Research paper</h3>
+      <div class="price" data-eur="100">€100</div>
+      <div class="convert" id="p1"></div>
+      <p>1500–3000 words</p>
+    </div>
+    <div class="price-card">
+      <h3>Full thesis</h3>
+      <div class="price" data-eur="300">€300</div>
+      <div class="convert" id="p2"></div>
+      <p>All chapters included</p>
+    </div>
+    <div class="price-card">
+      <h3>Data analysis</h3>
+      <div class="price" data-eur="80">€80</div>
+      <div class="convert" id="p3"></div>
+      <p>SPSS / Excel</p>
+    </div>
+  </div>
+
+  <div style="margin-top:40px; text-align:center;">
+    <p style="color:#9ca3af;">Convert prices to your local currency</p>
+    <iframe src="https://www.xe.com/currencyconverter/" style="width:100%; height:400px; border:none; border-radius:12px;"></iframe>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Payment Methods</h2>
+  <p style="color:#9ca3af">We accept secure and convenient payment options worldwide.</p>
+  <div class="grid">
+    <div class="card"><h3>UPI</h3><p>Fast payments for Indian students.</p></div>
+    <div class="card"><h3>PayPal</h3><p>Safe international transactions.</p></div>
+    <div class="card"><h3>Bank Transfer</h3><p>Wise / Revolut supported.</p></div>
+  </div>
+</section>
+
+<section id="reviews" class="section">
+  <h2>What students say</h2>
+  <div class="testimonials">
+    <div class="testimonial">Saved my semester. Delivered overnight.</div>
+    <div class="testimonial">SPSS analysis was perfect.</div>
+    <div class="testimonial">Highly recommend for thesis help.</div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Place your order</h2>
+  <form>
+    <input type="text" placeholder="Your name">
+    <input type="email" placeholder="Email (lastminute619@gmail.com)">
+    <input type="text" placeholder="WhatsApp (+91 8789580047)">
+    <select>
+      <option>What do you need?</option>
+      <option>Thesis</option>
+      <option>Research paper</option>
+      <option>Data analysis</option>
+    </select>
+    <textarea placeholder="Project details..."></textarea>
+    <button class="primary">Send request</button>
+  </form>
+</section>
+
+<footer>
+  <p>Contact: lastminute619@gmail.com | +91 8789580047</p>
+  <p>© 2026 Last Minute</p>
+</footer>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/918789580047?text=Hi%2C%20I%20need%20help%20with%20my%20thesis%20or%20data%20analysis.%20My%20deadline%20is%20____." target="_blank" style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px 18px; border-radius:50px; text-decoration:none; font-weight:bold;">WhatsApp</a>
+
+<script>
+// Real-time currency conversion using exchangerate.host API
+async function updatePrices() {
+  try {
+    const res = await fetch('https://api.exchangerate.host/latest?base=EUR&symbols=INR,USD');
+    const data = await res.json();
+
+    const rateINR = data.rates.INR;
+    const rateUSD = data.rates.USD;
+
+    document.querySelectorAll('.price').forEach((el, index) => {
+      const eur = el.getAttribute('data-eur');
+      const inr = (eur * rateINR).toFixed(0);
+      const usd = (eur * rateUSD).toFixed(0);
+
+      document.getElementById('p' + (index+1)).innerText = `≈ ₹${inr} | $${usd}`;
+    });
+
+  } catch (error) {
+    console.error('Currency API error:', error);
+  }
+}
+
+updatePrices();
+</script>
+
 </body>
 </html>
