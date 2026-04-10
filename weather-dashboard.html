@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; }
+        #weather-results { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Dashboard</h1>
+        <input type="text" id="city-input" placeholder="Enter city name" />
+        <button id="search-btn">Search</button>
+        <div id="weather-results"></div>
+    </div>
+    <script>
+        const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
+
+        document.getElementById('search-btn').addEventListener('click', function() {
+            const city = document.getElementById('city-input').value;
+            getWeatherData(city);
+        });
+
+        function getWeatherData(city) {
+            const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+            const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+
+            Promise.all([
+                fetch(currentWeatherUrl),
+                fetch(forecastUrl)
+            ]).then(responses => Promise.all(responses.map(response => response.json())))
+            .then(data => {
+                displayCurrentWeather(data[0]);
+                displayForecast(data[1]);
+            })
+            .catch(error => {
+                document.getElementById('weather-results').innerHTML = `<p>Error fetching data: ${error.message}</p>`;
+            });
+        }
+
+        function displayCurrentWeather(data) {
+            const weatherSection = `<h2>Current Weather</h2>
+                <p>Temperature: ${data.main.temp} °C</p>
+                <p>Weather: ${data.weather[0].description}</p>
+                <p>Humidity: ${data.main.humidity}%</p>`;
+            document.getElementById('weather-results').innerHTML += weatherSection;
+        }
+
+        function displayForecast(data) {
+            const forecastSection = `<h2>3-Day Forecast</h2>
+                <ul>${data.list.slice(0, 3).map(item => `<li>${item.dt_txt}: ${item.main.temp} °C, ${item.weather[0].description}</li>`).join('')}</ul>`;
+            document.getElementById('weather-results').innerHTML += forecastSection;
+        }
+    </script>
+</body>
+</html>
